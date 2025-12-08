@@ -176,12 +176,19 @@ class _HomePageState extends State<HomePage> {
                       height: 120,
                       fit: BoxFit.cover,
                     ))
-              : Image.asset(
-                  'assets/images/logo_simbol.png',
-                  width: 120,
-                  height: 120,
-                  fit: BoxFit.cover,
-                ),
+              : product.assetImages.isNotEmpty
+                  ? Image.asset(
+                      product.assetImages.first,
+                      width: 120,
+                      height: 120,
+                      fit: BoxFit.cover,
+                    )
+                  : Image.asset(
+                      'assets/images/logo_simbol.png',
+                      width: 120,
+                      height: 120,
+                      fit: BoxFit.cover,
+                    ),
         ),
         const SizedBox(width: 16),
         // 상품 정보

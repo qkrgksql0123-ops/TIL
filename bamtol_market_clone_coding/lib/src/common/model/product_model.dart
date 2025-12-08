@@ -10,6 +10,7 @@ class ProductModel {
   final ProductCategoryType category;
   final String? tradeLocation;
   final List<XFile> images;
+  final List<String> assetImages; // assets 이미지 경로용
   final DateTime createdAt;
   final String sellerName;
 
@@ -21,9 +22,10 @@ class ProductModel {
     required this.isShare,
     required this.category,
     this.tradeLocation,
-    required this.images,
+    this.images = const [],
+    this.assetImages = const [],
     required this.createdAt,
-    this.sellerName = '개발하는남자',
+    this.sellerName = '박한비',
   });
 
   String get formattedDate {
